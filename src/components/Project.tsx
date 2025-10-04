@@ -4,7 +4,6 @@ import ProjectDetails from "./ProjectDetails";
 const Project = ({
   title,
   description,
-  subDescription,
   href,
   image,
   tags,
@@ -39,7 +38,6 @@ const Project = ({
         <ProjectDetails
           title={title}
           description={description}
-          subDescription={subDescription}
           image={image}
           tags={tags}
           href={href}

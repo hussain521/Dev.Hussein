@@ -7,19 +7,18 @@ import { twMerge } from "tailwind-merge";
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
 type HoverBorderGradientProps = {
-  as?: React.ElementType;
+  as?: React.ComponentType<any>;
   containerClassName?: string;
   className?: string;
   duration?: number;
   clockwise?: boolean;
-  children?: React.ReactNode; // 👈 مهم
 } & React.HTMLAttributes<HTMLElement>;
 
 export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as: Tag = "button",
+  as: Tag = "button" as any,
   duration = 1,
   clockwise = true,
   ...props

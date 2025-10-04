@@ -25,7 +25,7 @@ function Contact() {
       setShowAlert(false);
     }, 5000);
   };
-  const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formDate,
       [e.target.name]: e.target.value,

@@ -9,7 +9,9 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
   title: string;
-  content: React.ReactNode;
+  date: string;
+  job: string;
+  contents: string[];
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {

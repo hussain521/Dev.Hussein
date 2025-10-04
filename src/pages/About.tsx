@@ -8,7 +8,7 @@ import { CometCard } from "@/components/ui/comet-card.tsx";
 import { motion } from "motion/react";
 import { HoverBorderGradient } from "@/components/ui/hover-border.tsx";
 function About() {
-  const grid2Container = useRef();
+  const grid2Container = useRef<HTMLDivElement>(null);
   return (
     <section id="about" className="c-space section-spacing">
       <h2 className="text-heading">About Me</h2>

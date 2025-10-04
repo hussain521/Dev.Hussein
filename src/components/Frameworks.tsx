@@ -3,14 +3,14 @@ import { OrbitingCircles } from "./ui/OrbitingCircles";
 export function Frameworks() {
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center  ">
-      <OrbitingCircles iconSize={25} radius={120} reverse speed={5}>
+      <OrbitingCircles className="" iconSize={25} radius={120} reverse speed={5}>
         <Icons.git />
         <Icons.gitHub />
         <Icons.notion />
         <Icons.postman />
       </OrbitingCircles>
 
-      <OrbitingCircles iconSize={25} radius={160} speed={2}>
+      <OrbitingCircles className="" iconSize={25} radius={160} reverse={false} speed={2}>
         <Icons.react />
         <Icons.nextjs />
         <Icons.typescript />
@@ -23,7 +23,7 @@ export function Frameworks() {
         <Icons.tailwind />
         <Icons.sass />
       </OrbitingCircles>
-      <OrbitingCircles iconSize={25} radius={80} speed={1}>
+      <OrbitingCircles className="" iconSize={25} radius={80} reverse={false} speed={1}>
         <Icons.anaconda />
         <Icons.vscode />
         <Icons.figma />

@@ -21,21 +21,25 @@ const ProjectDetails = ({
     {
       id: 1,
       name: "React.js",
+      designation: "Framework",
       image: "assets/logos/react.svg",
     },
     {
       id: 2,
       name: "Tailwind",
+      designation: "CSS",
       image: "assets/logos/tailwindcss.svg",
     },
     {
       id: 3,
-      name: "Jane Smith",
+      name: "JavaScript",
+      designation: "Language",
       image: "assets/logos/javascript.svg",
     },
     {
       id: 4,
       name: "Vite.js",
+      designation: "Build Tool",
       image: "assets/logos/vitejs.svg",
     },
   ];
@@ -87,15 +91,15 @@ const ProjectDetails = ({
                   <AnimatedTooltip items={people} />
                 </div>
               </CardItem>
-              <a
+              <CardItem
                 translateZ={20}
                 translateX={40}
-                as="button"
+                as="a"
                 className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                 href={href}
               >
                 Try now →
-              </a>
+              </CardItem>
             </div>
           </CardBody>
         </CardContainer>

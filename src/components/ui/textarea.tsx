@@ -4,10 +4,10 @@ import { useMotionTemplate, useMotionValue, motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 
 export interface textAreaProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-const TextArea = React.forwardRef<HTMLInputElement, textAreaProps>(
-  ({ className, type, ...props }, ref) => {
+const TextArea = React.forwardRef<HTMLTextAreaElement, textAreaProps>(
+  ({ className, ...props }, ref) => {
     const radius = 100; // change this to increase the rdaius of the hover effect
     const [visible, setVisible] = React.useState(false);
 

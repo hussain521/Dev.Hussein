@@ -52,11 +52,11 @@ const ProjectDetails = ({
       >
         <button
           onClick={closeModal}
-          className="absolute p-2 rounded-sm top-5 right-5 bg-midnight hover:bg-gray-500"
+          className="absolute z-30 p-2 rounded-sm md:top-5 top-10 right-5 bg-midnight hover:bg-gray-500"
         >
           <img src="assets/close.svg" className="w-6 h-6" />
         </button>
-        <CardContainer className="inter-var">
+        <CardContainer className="inter-var mx-2 md:mx-0 ">
           <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
             <CardItem
               translateZ="50"

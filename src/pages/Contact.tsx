@@ -6,8 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { TextArea } from "@/components/ui/textarea";
 import Aleart from "../components/Aleart";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [alertType, setAlertType] = useState("success");
@@ -50,7 +52,7 @@ function Contact() {
         },
         "dYyzaMorA16DlJJNV"
       );
-      showAlertMessage("success", "You message has been sent!");
+      showAlertMessage("success", t("contact.successMessage"));
       setFormData({
         name: "",
         email: "",
@@ -58,7 +60,7 @@ function Contact() {
       });
     } catch (error) {
       console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      showAlertMessage("danger", t("contact.errorMessage"));
     } finally {
       setIsLoading(false);
     }
@@ -76,22 +78,21 @@ function Contact() {
       <section className="container mx-auto max-w-7xl">
         <div className="shadow-input mx-auto w-full max-w-md rounded-none border-3 border-neutral-800 mt-10 bg-neutral-900 p-4 md:rounded-2xl md:p-8 md:pb-0 ">
           <h2 className="md:text-2xl text-xl font-bold capitalize text-neutral-200">
-            get in touch
+            {t("contact.title")}
           </h2>
           <p className="mt-2 max-w-sm text-sm  text-neutral-300">
-            I'd love to hear from you! If you have any questions, comments or
-            feedback, please use the form below.
+            {t("contact.subTitle")}
           </p>
 
           <form className="my-8" onSubmit={handleSubmit}>
             <LabelInputContainer className="mb-4">
-              <Label htmlFor="firstname">Full name</Label>
+              <Label htmlFor="firstname">{t("contact.fullName")}</Label>
               <Input
                 autoComplete="name"
                 required
                 name="name"
                 id="firstname"
-                placeholder="Full name"
+                placeholder={t("contact.fullName")}
                 type="text"
                 value={formDate.name}
                 onChange={handelChange}
@@ -99,7 +100,7 @@ function Contact() {
             </LabelInputContainer>
 
             <LabelInputContainer className="mb-4">
-              <Label htmlFor="email">Email Address</Label>
+              <Label htmlFor="email">{t("contact.emailAddress")}</Label>
               <Input
                 required
                 autoComplete="email"
@@ -112,7 +113,7 @@ function Contact() {
               />
             </LabelInputContainer>
             <LabelInputContainer className="mb-4">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t("contact.message")}</Label>
               <TextArea
                 id="message"
                 name="message"
@@ -120,7 +121,7 @@ function Contact() {
                 onChange={handelChange}
                 required
                 value={formDate.message}
-                placeholder="Share your thoughts.... "
+                placeholder={t("contact.messagePlaceholder")}
               />
             </LabelInputContainer>
 
@@ -128,7 +129,10 @@ function Contact() {
               className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium cursor-pointer text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
               type="submit"
             >
-              {!isLoading ? "Send" : "Sending..."} &rarr;
+              {!isLoading ? t("contact.send") : t("contact.sending")}{" "}
+              <span className="inline-block transition-transform duration-300 rtl:rotate-180">
+                &rarr;
+              </span>
               <BottomGradient />
             </button>
 

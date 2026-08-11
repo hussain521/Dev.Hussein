@@ -2,7 +2,10 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { HoverBorderGradient } from "../components/ui/hover-border-gradient.tsx";
+import { useTranslation } from "react-i18next";
+
 const CopyEmailButton = () => {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const email = "hussainelsid990@gmail.com";
 
@@ -35,7 +38,7 @@ const CopyEmailButton = () => {
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <img src="assets/copy-done.svg" className="w-5" alt="copy Icon" />
-            Email has Copied
+            {t("about.emailCopied")}
           </motion.p>
         ) : (
           <motion.p
@@ -47,7 +50,7 @@ const CopyEmailButton = () => {
             transition={{ duration: 0.2 }}
           >
             <img src="assets/copy.svg" className="w-5" alt="copy icon" />
-            Copy Email Address
+            {t("about.copyEmail")}
           </motion.p>
         )}
       </AnimatePresence>

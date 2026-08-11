@@ -3,20 +3,22 @@ import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 const HeroText = () => {
- const { t, i18n } = useTranslation();
- const isArabic = i18n.language === "ar";
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
-  const words = [t("secure"), t("modern"), t("scalable")];
+  const words = [t("hero.secure"), t("hero.modern"), t("hero.scalable")];
 
   const variants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: isArabic ? 50 : -50 },
     visible: { opacity: 1, x: 0 },
   };
 
   return (
     <div
       dir={isArabic ? "rtl" : "ltr"}
-      className=" z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text"
+      className={`z-10 mt-20 text-center md:mt-40 rounded-3xl bg-clip-text ${
+        isArabic ? "md:text-right" : "md:text-left"
+      }`}
     >
       {/* Desktop View */}
       <div className="flex-col hidden md:flex c-space">
@@ -27,17 +29,17 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi! I’m Hussein AL-Sayed 👋🏻
+          {t("hero.greeting")}
         </motion.h1>
-        <div className="flex flex-col items-start">
+        <div className={`flex flex-col ${isArabic ? "items-start" : "items-start"}`}>
           <motion.p
-            className="text-5xl font-medium text-neutral-300 w-150 capitalize py-3"
+            className="text-5xl font-medium text-neutral-300 max-w-2xl py-3"
             variants={variants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            frontend web developer based in cairo.
+            {t("hero.role")}
           </motion.p>
           <motion.div
             variants={variants}
@@ -47,7 +49,7 @@ const HeroText = () => {
           >
             <FlipWords
               words={words}
-              className="font-black text-white text-8xl"
+              className="font-black text-white text-7xl md:text-8xl"
             />
           </motion.div>
           <motion.p
@@ -57,7 +59,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Web Solutions
+            {t("hero.webSolutions")}
           </motion.p>
         </div>
       </div>
@@ -71,7 +73,7 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi! I’m Hussein AL-Sayed👋🏻
+          {t("hero.greeting")}
         </motion.p>
         <div>
           <motion.p
@@ -81,7 +83,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            building
+            {t("hero.building")}
           </motion.p>
           <motion.div
             variants={variants}
@@ -101,7 +103,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Web Applications
+            {t("hero.webApplications")}
           </motion.p>
         </div>
       </div>

@@ -1,5 +1,21 @@
-import React, { useState } from "react";
-import ProjectDetails from "./ProjectDetails";
+import React, { useState, lazy, Suspense } from "react";
+import { useTranslation } from "react-i18next";
+
+const ProjectDetails = lazy(() => import("./ProjectDetails"));
+
+interface TagItem {
+  id: number;
+  name: string;
+}
+
+interface ProjectProps {
+  title: string;
+  description: string;
+  href?: string;
+  image: string;
+  tags: TagItem[];
+  setPreview: (img: string | null) => void;
+}
 
 const Project = ({
   title,
@@ -8,8 +24,10 @@ const Project = ({
   image,
   tags,
   setPreview,
-}) => {
+}: ProjectProps) => {
+  const { t } = useTranslation();
   const [isHidden, setIsHidden] = useState(false);
+
   return (
     <>
       <div
@@ -29,20 +47,26 @@ const Project = ({
           onClick={() => setIsHidden(true)}
           className="flex items-center gap-1 cursor-pointer hover-animation"
         >
-          Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
+          {t("projects.readMore")}
+          <img
+            src="assets/arrow-right.svg"
+            className="w-5 transition-transform duration-300 rtl:rotate-180"
+            alt="arrow"
+          />
         </button>
       </div>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
       {isHidden && (
-        <ProjectDetails
-          title={title}
-          description={description}
-          image={image}
-          tags={tags}
-          href={href}
-          closeModal={() => setIsHidden(false)}
-        />
+        <Suspense fallback={null}>
+          <ProjectDetails
+            title={title}
+            description={description}
+            image={image}
+            tags={tags}
+            href={href}
+            closeModal={() => setIsHidden(false)}
+          />
+        </Suspense>
       )}
     </>
   );

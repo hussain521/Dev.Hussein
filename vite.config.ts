@@ -11,4 +11,24 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/three") || id.includes("node_modules/@react-three")) {
+            return "three-vendor";
+          }
+          if (id.includes("node_modules/framer-motion") || id.includes("node_modules/motion")) {
+            return "motion-vendor";
+          }
+          if (id.includes("node_modules/@tsparticles") || id.includes("node_modules/tsparticles")) {
+            return "particles-vendor";
+          }
+          if (id.includes("node_modules/i18next") || id.includes("node_modules/react-i18next")) {
+            return "i18n-vendor";
+          }
+        },
+      },
+    },
+  },
 });

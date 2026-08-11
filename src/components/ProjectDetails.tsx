@@ -1,14 +1,21 @@
 import { motion } from "motion/react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-import { AnimatedTooltip } from "./ui/animated-tooltip";
+import { useTranslation } from "react-i18next";
+
+interface TagItem {
+  id: number;
+  name: string;
+}
+
 interface ProjectDetailsProps {
   title: string;
   description: string;
   image: string;
-  tags?: string[];
+  tags?: TagItem[];
   href?: string;
   closeModal: () => void;
 }
+
 const ProjectDetails = ({
   title,
   description,
@@ -17,32 +24,7 @@ const ProjectDetails = ({
   href,
   closeModal,
 }: ProjectDetailsProps) => {
-  const people = [
-    {
-      id: 1,
-      name: "React.js",
-      designation: "Framework",
-      image: "assets/logos/react.svg",
-    },
-    {
-      id: 2,
-      name: "Tailwind",
-      designation: "CSS",
-      image: "assets/logos/tailwindcss.svg",
-    },
-    {
-      id: 3,
-      name: "JavaScript",
-      designation: "Language",
-      image: "assets/logos/javascript.svg",
-    },
-    {
-      id: 4,
-      name: "Vite.js",
-      designation: "Build Tool",
-      image: "assets/logos/vitejs.svg",
-    },
-  ];
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
       <motion.div
@@ -85,20 +67,28 @@ const ProjectDetails = ({
                 alt="thumbnail"
               />
             </CardItem>
-            <div className="flex justify-between items-center mt-20">
+            <div className="flex justify-between items-center mt-10">
               <CardItem translateZ={20} translateX={-40}>
-                <div className="flex flex-row items-center justify-center mb-10 w-full">
-                  <AnimatedTooltip items={people} />
+                <div className="flex flex-wrap gap-2 max-w-[180px]">
+                  {tags?.map((tag) => (
+                    <span
+                      key={tag.id}
+                      className="text-xs px-2 py-1 rounded bg-neutral-800 text-neutral-300 border border-neutral-700"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
                 </div>
               </CardItem>
               <CardItem
                 translateZ={20}
                 translateX={40}
                 as="a"
-                className="px-4 py-2 rounded-xl text-xs font-normal text-white"
+                className="px-4 py-2 rounded-xl text-xs font-normal text-white flex items-center gap-1"
                 href={href}
+                target="_blank"
               >
-                Try now →
+                {t("projects.tryNow")} <span className="inline-block transition-transform duration-300 rtl:rotate-180">&rarr;</span>
               </CardItem>
             </div>
           </CardBody>

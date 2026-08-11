@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { FloatingDock } from "./ui/floating-dock";
+import { useTranslation } from "react-i18next";
 import {
   IconBrandGithub,
   IconHome,
@@ -10,40 +12,62 @@ import {
   IconBrandWhatsapp,
   IconBrandFacebook,
   IconDownload,
+  IconLanguage,
 } from "@tabler/icons-react";
 
 function Navbar() {
+  const { t, i18n } = useTranslation();
+  const [showLangMenu, setShowLangMenu] = useState(false);
+
+  const languages = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "ar", name: "العربية", flag: "🇪🇬" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+  ];
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    setShowLangMenu(false);
+  };
+
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   const links = [
     {
-      title: "Home",
+      title: t("nav.home"),
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#home",
     },
     {
-      title: "About",
+      title: t("nav.about"),
       icon: (
         <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#about",
     },
     {
-      title: "Projects",
+      title: t("nav.projects"),
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#projects",
     },
     {
-      title: "Experiences",
+      title: t("nav.experiences"),
       icon: (
         <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#experiences",
     },
     {
-      title: "Contact",
+      title: t("nav.contact"),
       icon: (
         <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -78,16 +102,43 @@ function Navbar() {
       href: "https://github.com/hussain521",
     },
     {
-      title: "Download CV",
+      title: t("nav.downloadCv"),
       icon: (
         <IconDownload className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/Hussein Al-Sayed.pdf",
     },
+    {
+      title: t("nav.language"),
+      icon: (
+        <IconLanguage className="h-full w-full text-cyan-400" />
+      ),
+      href: "#",
+      onClick: () => setShowLangMenu((prev) => !prev),
+    },
   ];
+
   return (
-    <div className="fixed inset-x-0   z-30 w-full">
+    <div className="fixed inset-x-0 z-30 w-full flex flex-col items-center">
       <FloatingDock mobileClassName="translate-y-5 " items={links} />
+      {showLangMenu && (
+        <div className="mt-2 flex gap-2 p-2 bg-neutral-900/90 border border-neutral-700 rounded-xl shadow-xl backdrop-blur-md z-40">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => changeLanguage(lang.code)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                i18n.language === lang.code
+                  ? "bg-cyan-600 text-white"
+                  : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+              }`}
+            >
+              <span>{lang.flag}</span>
+              <span>{lang.name}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

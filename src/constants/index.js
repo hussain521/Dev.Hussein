@@ -1,224 +1,147 @@
-export const myProjects = [
+export const getTranslatedProjects = (t) => [
   {
     id: 1,
-    title: "Trekio (Tourism App)",
-    description:
-      "Designed and implemented an image moderation dashboard with batch approvals and role-based views; reduced moderation review time by 42% and enabled 2,500+ weekly reviews.",
-
+    title: t("projects.trekio.title"),
+    description: t("projects.trekio.description"),
     href: "https://trekio.net/login",
     logo: "",
     image: "/assets/p2.png",
     tags: [
-      {
-        id: 1,
-        name: "React.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
-      {
-        id: 3,
-        name: "Inertia.js",
-      },
-      {
-        id: 5,
-        name: "TypeScript",
-      },
+      { id: 1, name: "React.Js" },
+      { id: 2, name: "Tailwind" },
+      { id: 3, name: "Inertia.js" },
+      { id: 5, name: "TypeScript" },
     ],
   },
   {
     id: 2,
-    title: "Elmullim Platform",
-    description:
-      "Designed and developed a platform for students, teachers, and parents, including online exams, payment gateway integration, and role-based dashboards.",
-
+    title: t("projects.elmullim.title"),
+    description: t("projects.elmullim.description"),
     href: "",
     logo: "",
     image: "/assets/p6.png",
     tags: [
-      {
-        id: 1,
-        name: "React.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
-
-      {
-        id: 3,
-        name: "TypeScript",
-      },
+      { id: 1, name: "React.Js" },
+      { id: 2, name: "Tailwind" },
+      { id: 3, name: "TypeScript" },
     ],
   },
   {
     id: 3,
-    title: "Food Ordering Website",
-    description:
-      "Developed a food ordering app with menu display, cart & order pages, and authentication..",
-
+    title: t("projects.foodOrdering.title"),
+    description: t("projects.foodOrdering.description"),
     href: "https://complete-food-delivery-psi.vercel.app/",
     logo: "",
     image: "/assets/p5.png",
     tags: [
-      {
-        id: 1,
-        name: "React.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
+      { id: 1, name: "React.Js" },
+      { id: 2, name: "Tailwind" },
     ],
   },
-
   {
     id: 7,
-    title: "Hotel Website",
-    description:
-      "Built a booking platform with room browsing, booking, and Clerk-based authentication.",
-
+    title: t("projects.hotel.title"),
+    description: t("projects.hotel.description"),
     href: "https://www.youtube.com/watch?v=dUNvwVdmd98",
     logo: "",
     image: "/assets/p10.png",
     tags: [
-      {
-        id: 1,
-        name: "React.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
-      {
-        id: 3,
-        name: "Clerk",
-      },
-      {
-        id: 4,
-        name: "React Router",
-      },
+      { id: 1, name: "React.Js" },
+      { id: 2, name: "Tailwind" },
+      { id: 3, name: "Clerk" },
+      { id: 4, name: "React Router" },
     ],
   },
   {
-    id: 3,
-    title: "Portfolio",
-    description: "Developed  a portfolio app ",
-
+    id: 8,
+    title: t("projects.portfolio.title"),
+    description: t("projects.portfolio.description"),
     href: "/",
     logo: "",
     image: "/assets/p1.png",
     tags: [
-      {
-        id: 1,
-        name: "React.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
-      {
-        id: 3,
-        name: "MagicUI",
-      },
+      { id: 1, name: "React.Js" },
+      { id: 2, name: "Tailwind" },
+      { id: 3, name: "MagicUI" },
     ],
   },
   {
     id: 4,
-    title: "Factory Pro",
-    description:
-      "Excellence innovating industry for today At the heart of our operations is a commitment to delivering superior products through cutting- edge technology and innovative processes.",
-
+    title: t("projects.factoryPro.title"),
+    description: t("projects.factoryPro.description"),
     href: "https://factorypro-sand.vercel.app/",
     logo: "",
     image: "/assets/p3.png",
     tags: [
-      {
-        id: 1,
-        name: "Next.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
+      { id: 1, name: "Next.Js" },
+      { id: 2, name: "Tailwind" },
     ],
   },
   {
     id: 5,
-    title: "Coffee Shop Website",
-    description:
-      "Designed a responsive coffee shop site with animations, focusing on UI/UX and performance.",
-
+    title: t("projects.coffeeShop.title"),
+    description: t("projects.coffeeShop.description"),
     href: "https://coffee-beryl-six.vercel.app/",
     logo: "",
     image: "/assets/p8.png",
     tags: [
-      {
-        id: 1,
-        name: "Next.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
+      { id: 1, name: "Next.Js" },
+      { id: 2, name: "Tailwind" },
     ],
   },
   {
     id: 6,
-    title: "E-Commerce Website",
-    description:
-      "Built online store with product filtering, cart, order placement, and authentication",
-
+    title: t("projects.ecommerce.title"),
+    description: t("projects.ecommerce.description"),
     href: "https://forever-tau-ecru.vercel.app/",
     logo: "",
     image: "/assets/p4.png",
     tags: [
-      {
-        id: 1,
-        name: "Next.Js",
-      },
-      {
-        id: 2,
-        name: "Tailwind",
-      },
-      {
-        id: 3,
-        name: "Redux",
-      },
-      {
-        id: 4,
-        name: "Axios",
-      },
+      { id: 1, name: "Next.Js" },
+      { id: 2, name: "Tailwind" },
+      { id: 3, name: "Redux" },
+      { id: 4, name: "Axios" },
     ],
   },
 ];
 
-export const experiences = [
+export const getTranslatedExperiences = (t) => [
   {
-    title: "Front End Developer",
-    job: "Sync8Solutions",
-    date: "July-2025 - Present",
+    title: t("experiences.deltaDev.title"),
+    job: t("experiences.deltaDev.job"),
+    date: t("experiences.deltaDev.date"),
     contents: [
-      "✅ Built and maintained production-ready web interfaces using React, Inertia.js, Tailwind CSS, and Ant Design; ensured responsive, accessible UX across devices.",
-      "✅ Trekio (Tourism App): Designed and implemented an image moderation dashboard with batch approvals and role-based views; reduced moderation review time by 42% and enabled 2,500+ weekly reviews.",
-      "✅ Crypto Dashboard: Developed wallet management and live price-tracking UI (React, WebSockets, Axios); optimized rendering and caching to cut mobile load time by 35% and reduce memory usage by 20%.",
-      "✅ Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "✅ Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      t("experiences.deltaDev.p1"),
+      t("experiences.deltaDev.p2"),
+      t("experiences.deltaDev.p3"),
     ],
   },
-
   {
-    title: "Front End Developer",
-    job: "Freelancer",
-    date: "2024 - Present",
+    title: t("experiences.sync8.title"),
+    job: t("experiences.sync8.job"),
+    date: t("experiences.sync8.date"),
     contents: [
-      "Delivered responsive, user-friendly UIs for multiple clients using React, HTML, CSS, and JavaScript (ES6+). (2024 – Present)",
-      "✅ E-commerce Storefront: Built product listing, filters, and checkout flow (React, Redux Toolkit, Tailwind CSS); improved pilot checkout conversion by 18%.",
-      "✅ Elmullim_Frontend (Educational Platform): Architected and developed platform including online exams, payment integration (Stripe), and role-based dashboards; supported 1,000+ users and streamlined grading workflows.",
-      " Implemented real-time progress tracking and automated performance reports for teachers and parents, increasing engagement and reducing manual grading overhead.",
-      " Integrated secure subscription and payment flows with recurring billing and admin dashboards to manage subscriptions and refunds.",
-      " Collaborated remotely with distributed teams using Git, Trello, and Slack, ensuring smooth version control and communication.",
+      t("experiences.sync8.p1"),
+      t("experiences.sync8.p2"),
+      t("experiences.sync8.p3"),
+      t("experiences.sync8.p4"),
+      t("experiences.sync8.p5"),
+    ],
+  },
+  {
+    title: t("experiences.freelance.title"),
+    job: t("experiences.freelance.job"),
+    date: t("experiences.freelance.date"),
+    contents: [
+      t("experiences.freelance.p1"),
+      t("experiences.freelance.p2"),
+      t("experiences.freelance.p3"),
+      t("experiences.freelance.p4"),
+      t("experiences.freelance.p5"),
+      t("experiences.freelance.p6"),
     ],
   },
 ];
+
+export const myProjects = getTranslatedProjects((key) => key);
+export const experiences = getTranslatedExperiences((key) => key);

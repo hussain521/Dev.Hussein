@@ -36,8 +36,8 @@ const Project = ({
         onMouseLeave={() => setPreview(null)}
       >
         <div>
-          <p className="text-2xl">{title}</p>
-          <div className="flex text-[12px] md:text-sm gap-5 mt-2 text-sand">
+          <p className="text-2xl text-neutral-900 dark:text-white font-semibold">{title}</p>
+          <div className="flex text-[12px] md:text-sm gap-5 mt-2 text-amber-700 dark:text-sand">
             {tags.map((tag) => (
               <span key={tag.id}>{tag.name}</span>
             ))}
@@ -45,17 +45,19 @@ const Project = ({
         </div>
         <button
           onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          className="flex items-center gap-1 cursor-pointer hover-animation text-neutral-900 dark:text-white font-medium"
         >
           {t("projects.readMore")}
           <img
             src="assets/arrow-right.svg"
-            className="w-5 transition-transform duration-300 rtl:rotate-180"
+            width={20}
+            height={20}
+            className="w-5 transition-transform duration-300 rtl:rotate-180 dark:invert-0 invert"
             alt="arrow"
           />
         </button>
       </div>
-      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
+      <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent h-[1px] w-full" />
       {isHidden && (
         <Suspense fallback={null}>
           <ProjectDetails

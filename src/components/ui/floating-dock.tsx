@@ -71,6 +71,7 @@ const FloatingDockMobile = ({
                   <button
                     onClick={item.onClick}
                     key={item.title}
+                    aria-label={item.title}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900"
                   >
                     <div className="h-4 w-4">{item.icon}</div>
@@ -79,6 +80,7 @@ const FloatingDockMobile = ({
                   <a
                     href={item.href}
                     key={item.title}
+                    aria-label={item.title}
                     target={item.href.startsWith("#") ? "_self" : "_blank"}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900"
                   >
@@ -92,6 +94,7 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
+        aria-label="Toggle navigation dock"
         className="flex h-10 w-10 items-center justify-center rounded-full  bg-neutral-800"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5  text-neutral-400" />
@@ -113,7 +116,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={twMerge(
-        "mx-auto w-fit z-10 hidden h-16 items-end gap-4 rounded-2xl b  px-4 pb-3 md:flex  bg-neutral-900/80 mt-5",
+        "mx-auto w-fit z-10 hidden h-16 items-end gap-4 rounded-2xl border border-neutral-300 dark:border-neutral-800 px-4 pb-3 md:flex bg-slate-100/90 dark:bg-neutral-900/80 backdrop-blur-md shadow-lg mt-5",
         className
       )}
     >
@@ -145,14 +148,14 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 56, 40]);
+  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 56, 40]);
 
-  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 28, 20]);
   const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
-    [20, 40, 20]
+    [20, 28, 20]
   );
 
   const width = useSpring(widthTransform, {
@@ -209,11 +212,11 @@ function IconContainer({
   );
 
   if (onClick) {
-    return <button onClick={onClick}>{content}</button>;
+    return <button onClick={onClick} aria-label={title}>{content}</button>;
   }
 
   return (
-    <a href={href} target={href.startsWith("#") ? "_self" : "_blank"}>
+    <a href={href} aria-label={title} target={href.startsWith("#") ? "_self" : "_blank"}>
       {content}
     </a>
   );

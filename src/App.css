@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
   scroll-behavior: smooth;
@@ -66,11 +67,19 @@
 }
 
 body {
-  background: #030412;
   font-family: "Funnel Display", sans-serif;
-  color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+html.dark body {
+  background: #030412;
+  color: white;
+}
+
+html:not(.dark) body {
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
 .c-space {
@@ -86,15 +95,15 @@ body {
 }
 
 .text-heading {
-  @apply font-bold text-3xl md:text-4xl;
+  @apply font-bold text-3xl md:text-4xl text-neutral-900 dark:text-white;
 }
 
 .headtext {
-  @apply mt-2 mb-2 text-xl;
+  @apply mt-2 mb-2 text-xl text-neutral-900 dark:text-white;
 }
 
 .subtext {
-  @apply text-neutral-400 text-sm md:text-base text-pretty;
+  @apply text-neutral-600 dark:text-neutral-400 text-sm md:text-base text-pretty;
 }
 
 /* Navigation */
@@ -132,14 +141,14 @@ body {
 }
 
 .grid-default-color {
-  @apply p-6 bg-gradient-to-b from-storm to-indigo rounded-2xl;
+  @apply p-6 bg-slate-200 border border-slate-300 dark:border-none dark:bg-gradient-to-b dark:from-storm dark:to-indigo rounded-2xl;
 }
 
 .grid-special-color {
-  @apply p-6 bg-gradient-to-b from-royal to-lavender rounded-2xl;
+  @apply p-6 bg-indigo-100 border border-indigo-200 dark:border-none dark:bg-gradient-to-b dark:from-royal dark:to-lavender rounded-2xl;
 }
 .grid-black-color {
-  @apply p-6 bg-gradient-to-tl from-[#3A3A3A] via-[#242424] to-[#3A3A3A] rounded-3xl;
+  @apply p-6 bg-slate-200 border border-slate-300 dark:border-none dark:bg-gradient-to-tl dark:from-[#3A3A3A] dark:via-[#242424] dark:to-[#3A3A3A] rounded-3xl;
 }
 
 /* Contact Section*/

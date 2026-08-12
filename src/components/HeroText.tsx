@@ -23,7 +23,7 @@ const HeroText = () => {
       {/* Desktop View */}
       <div className="flex-col hidden md:flex c-space">
         <motion.h1
-          className="text-4xl font-medium"
+          className="text-4xl font-medium text-white drop-shadow-md"
           variants={variants}
           initial="hidden"
           animate="visible"
@@ -33,7 +33,7 @@ const HeroText = () => {
         </motion.h1>
         <div className={`flex flex-col ${isArabic ? "items-start" : "items-start"}`}>
           <motion.p
-            className="text-5xl font-medium text-neutral-300 max-w-2xl py-3"
+            className="text-5xl font-medium text-white drop-shadow-md max-w-2xl py-3"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -49,11 +49,11 @@ const HeroText = () => {
           >
             <FlipWords
               words={words}
-              className="font-black text-white text-7xl md:text-8xl"
+              className="font-black text-white drop-shadow-lg text-7xl md:text-8xl"
             />
           </motion.div>
           <motion.p
-            className="text-4xl font-medium pt-3 text-neutral-300"
+            className="text-4xl font-medium pt-3 text-white drop-shadow-md"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -67,7 +67,7 @@ const HeroText = () => {
       {/* Mobile View */}
       <div className="flex flex-col space-y-6 md:hidden">
         <motion.p
-          className="text-4xl font-medium"
+          className="text-4xl font-medium text-white drop-shadow-md"
           variants={variants}
           initial="hidden"
           animate="visible"
@@ -77,7 +77,7 @@ const HeroText = () => {
         </motion.p>
         <div>
           <motion.p
-            className="text-5xl font-black text-neutral-300"
+            className="text-5xl font-black text-white drop-shadow-md"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -93,11 +93,11 @@ const HeroText = () => {
           >
             <FlipWords
               words={words}
-              className="font-bold text-white text-5xl"
+              className="font-bold text-white drop-shadow-lg text-5xl"
             />
           </motion.div>
           <motion.p
-            className="text-2xl font-black text-neutral-300 pt-3"
+            className="text-2xl font-black text-white drop-shadow-md pt-3"
             variants={variants}
             initial="hidden"
             animate="visible"

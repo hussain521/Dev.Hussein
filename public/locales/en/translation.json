@@ -7,7 +7,8 @@
     "experiences": "Experiences",
     "contact": "Contact",
     "downloadCv": "Download CV",
-    "language": "Language"
+    "language": "Language",
+    "theme": "Toggle Theme"
   },
   "hero": {
     "greeting": "Hi! I’m Hussein AL-Sayed 👋🏻",

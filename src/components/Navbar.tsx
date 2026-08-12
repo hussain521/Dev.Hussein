@@ -13,11 +13,34 @@ import {
   IconBrandFacebook,
   IconDownload,
   IconLanguage,
+  IconSun,
+  IconMoon,
 } from "@tabler/icons-react";
 
 function Navbar() {
   const { t, i18n } = useTranslation();
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme === "dark";
+    }
+    return document.documentElement.classList.contains("dark") || true;
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+  };
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -115,6 +138,16 @@ function Navbar() {
       ),
       href: "#",
       onClick: () => setShowLangMenu((prev) => !prev),
+    },
+    {
+      title: t("nav.theme"),
+      icon: isDark ? (
+        <IconSun className="h-full w-full text-amber-400" />
+      ) : (
+        <IconMoon className="h-full w-full text-indigo-500" />
+      ),
+      href: "#",
+      onClick: toggleTheme,
     },
   ];
 

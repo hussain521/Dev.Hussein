@@ -76,11 +76,11 @@ function Contact() {
         refresh
       />
       <section className="container mx-auto max-w-7xl">
-        <div className="shadow-input mx-auto w-full max-w-md rounded-none border-3 border-neutral-800 mt-10 bg-neutral-900 p-4 md:rounded-2xl md:p-8 md:pb-0 ">
-          <h2 className="md:text-2xl text-xl font-bold capitalize text-neutral-200">
+        <div className="shadow-input mx-auto w-full max-w-md rounded-none border-3 border-neutral-300 dark:border-neutral-800 mt-10 bg-white dark:bg-neutral-900 p-4 md:rounded-2xl md:p-8 md:pb-0">
+          <h2 className="md:text-2xl text-xl font-bold capitalize text-neutral-800 dark:text-neutral-200">
             {t("contact.title")}
           </h2>
-          <p className="mt-2 max-w-sm text-sm  text-neutral-300">
+          <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
             {t("contact.subTitle")}
           </p>
 

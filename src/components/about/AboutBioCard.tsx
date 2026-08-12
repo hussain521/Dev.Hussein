@@ -22,6 +22,8 @@ export function AboutBioCard() {
             <div className="relative mt-2 aspect-[3/4] w-full">
               <img
                 loading="lazy"
+                width={300}
+                height={400}
                 className="absolute inset-0 h-full w-full rounded-[16px] pb-2 object-cover contrast-75"
                 alt="Invite background"
                 src="assets/shs.png"
@@ -37,6 +39,8 @@ export function AboutBioCard() {
       <img
         src="assets/coding-pov.png"
         alt=""
+        width={500}
+        height={500}
         className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
       />
       <div className="z-10">

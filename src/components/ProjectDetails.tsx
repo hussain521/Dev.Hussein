@@ -34,9 +34,10 @@ const ProjectDetails = ({
       >
         <button
           onClick={closeModal}
+          aria-label="Close modal"
           className="absolute z-30 p-2 rounded-sm md:top-5 top-10 right-5 bg-midnight hover:bg-gray-500"
         >
-          <img src="assets/close.svg" className="w-6 h-6" />
+          <img src="assets/close.svg" width={24} height={24} className="w-6 h-6" alt="close" />
         </button>
         <CardContainer className="inter-var mx-2 md:mx-0 ">
           <CardBody className=" relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-white/[0.2]  w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">

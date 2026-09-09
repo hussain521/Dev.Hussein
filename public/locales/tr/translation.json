@@ -36,6 +36,28 @@
     "title": "Seçilmiş Projelerim",
     "readMore": "Daha Fazla Oku",
     "tryNow": "Şimdi Dene",
+    "pagination": {
+      "previous": "Önceki",
+      "next": "Sonraki",
+      "pageOf": "Sayfa {{current}} / {{total}}",
+      "showingProjects": "{{total}} projeden {{start}} - {{end}} arası gösteriliyor"
+    },
+    "medibroking": {
+      "title": "MediBroking",
+      "description": "Sağlıkta mükemmelliği ve laboratuvar yeniliklerini güçlendiren kapsamlı tıbbi ürünler ve sağlık çözümleri platformu."
+    },
+    "beetsah": {
+      "title": "Beetsah",
+      "description": "Şehrin kalbinde hayalinizdeki evi bulun. Seçkin gayrimenkulleri keşfetmek için modern bir emlak platformu."
+    },
+    "disil": {
+      "title": "Disil",
+      "description": "Yüklerinizi saniyeler içinde doğrudan telefonunuzdan taşıyın. Anında sevkiyat, onaylı taşıyıcılar ve gerçek zamanlı takip."
+    },
+    "gamersStation": {
+      "title": "Gamers Station",
+      "description": "PlayStation 5, Xbox Series X, Nintendo Switch ve PC dahil en yeni oyun ve konsolları güvenilir satıcıların en iyi fırsatlarıyla satın alın."
+    },
     "trekio": {
       "title": "Trekio (Turizm Uygulaması)",
       "description": "Toplu onaylar ve rol tabanlı görünümler içeren bir görsel moderasyon paneli tasarlandı ve uygulandı; moderasyon süresi %42 azaltıldı."

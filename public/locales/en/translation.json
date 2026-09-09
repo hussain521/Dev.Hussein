@@ -37,6 +37,28 @@
     "title": "My Selected Projects",
     "readMore": "Read More",
     "tryNow": "Try now",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {{current}} of {{total}}",
+      "showingProjects": "Showing {{start}} - {{end}} of {{total}} projects"
+    },
+    "medibroking": {
+      "title": "MediBroking",
+      "description": "Empowering Healthcare Excellence & Laboratory Innovation. A comprehensive medical products and healthcare solutions platform."
+    },
+    "beetsah": {
+      "title": "Beetsah",
+      "description": "Find Your Dream Home in The Heart of The City. A modern real estate platform for discovering and browsing premium properties."
+    },
+    "disil": {
+      "title": "Disil",
+      "description": "Move Cargo Anywhere in Seconds, Right From Your Phone. Instant dispatch, verified carriers & real-time cargo tracking."
+    },
+    "gamersStation": {
+      "title": "Gamers Station",
+      "description": "Shop the latest games and consoles including PlayStation 5, Xbox Series X, Nintendo Switch, and PC gaming gear with competitive deals from trusted sellers."
+    },
     "trekio": {
       "title": "Trekio (Tourism App)",
       "description": "Designed and implemented an image moderation dashboard with batch approvals and role-based views; reduced moderation review time by 42% and enabled 2,500+ weekly reviews."

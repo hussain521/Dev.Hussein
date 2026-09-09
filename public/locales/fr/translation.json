@@ -36,6 +36,28 @@
     "title": "Mes Projets Sélectionnés",
     "readMore": "En savoir plus",
     "tryNow": "Essayer maintenant",
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "pageOf": "Page {{current}} sur {{total}}",
+      "showingProjects": "Affichage de {{start}} - {{end}} sur {{total}} projets"
+    },
+    "medibroking": {
+      "title": "MediBroking",
+      "description": "Renforcer l'excellence des soins de santé et l'innovation en laboratoire. Plateforme de produits et solutions médicales."
+    },
+    "beetsah": {
+      "title": "Beetsah",
+      "description": "Trouvez la maison de vos rêves au cœur de la ville. Une plateforme immobilière moderne pour découvrir des propriétés de premier ordre."
+    },
+    "disil": {
+      "title": "Disil",
+      "description": "Déplacez du fret partout en quelques secondes depuis votre téléphone. Expédition instantanée, transporteurs vérifiés et suivi en temps réel."
+    },
+    "gamersStation": {
+      "title": "Gamers Station",
+      "description": "Achetez les derniers jeux et consoles tels que PlayStation 5, Xbox Series X, Nintendo Switch et PC avec les meilleures offres de vendeurs vérifiés."
+    },
     "trekio": {
       "title": "Trekio (App de Tourisme)",
       "description": "Conception et mise en œuvre d'un tableau de bord de modération d'images avec approbations par lots et vues basées sur les rôles; réduction du temps de modération de 42%."
